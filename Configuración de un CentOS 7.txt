@@ -1,0 +1,60 @@
+———————— Instalar mono ————————
+
+yum install yum-utils
+rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
+yum install mono-complete fsharp
+
+Fuente: http://www.mono-project.com/docs/getting-started/install/linux/#centos-7-fedora-19-and-later-and-derivatives
+
+
+———————— Instalar nuget ————————
+yum install nuget
+
+———————— Instalar r ————————
+
+yum install -y epel-release 
+yum update -y 
+yum install -y R
+
+Fuente: http://superuser.com/a/956168
+
+
+———————— Configurar R provider ————————
+1.-
+echo -e "MONO64=`which mono`\nR_HOME=`R --print-home`" > ~/.rprovider.conf
+
+Fuente: http://bluemountaincapital.github.io/FSharpRProvider/mac-and-linux.html
+
+2.-
+Añadir al .bash_profile:
+export R_HOME=`R --print-home`
+
+3.-
+Instalar jsonlite:
+R
+install.packages("jsonlite")
+
+[ no funcionó
+4.-
+Instalar readr:
+
+yum install libcurl-devel
+R
+install.packages("readr")
+]
+
+———————— Extras ————————
+———————— Instalar vim ————————
+Yum install vim
+
+———————— Configurar X11 ————————
+1.- Que se cumpla lo siguiente:
+grep X11 /etc/ssh/sshd_config
+X11Forwarding yes
+X11DisplayOffset 10
+X11UseLocalhost no
+
+2.- yum install xauth
+
+3.- logout, login if necessary

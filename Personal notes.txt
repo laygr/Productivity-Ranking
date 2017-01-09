@@ -1,0 +1,8 @@
+login rápido con x11 forwarding
+ssh -XC -c blowfish-cbc,arcfour root@104.131.164.229
+
+Instalar x2go con yum -y groupinstall “xfce”
+
+
+correr visual studio code:
+LD_LIBRARY_PATH=/home/jesus/lib code . --user-data-dir=/home/jesus/.code
