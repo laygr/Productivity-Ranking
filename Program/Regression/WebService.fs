@@ -11,7 +11,7 @@ let processRequest host port database username =
       Suave.Filters.GET
         >=> request (fun r ->
               printf "Iniciando"
-              let results = Regression.regression()
+              let results = Regression.regression host port database username
               match r.queryParam "format" with
               | Choice1Of2 "csv" -> Successful.OK (Regression.resultsToCSV results)
                                     >=> setMimeType "application/csv; charset-utf-8"
