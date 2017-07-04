@@ -20,7 +20,7 @@ let processRequest host port database username =
             )
     ]
 
-[<EntryPoint>]
-let main host port database username =
+let main args =
+    let host, port, database, username = args.[0], args.[1], args.[2], args.[3]
     startWebServer defaultConfig (processRequest host port database username)
     0
