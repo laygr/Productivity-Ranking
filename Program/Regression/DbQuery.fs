@@ -52,7 +52,7 @@ let getData conn =
                     yield [|
                             "2014";                             //Año.Censal
                             municipio row                       //Municipio
-                            row.[1];                            //Clave.INEGI
+                            row.[claveInegiIndex];              //Clave.INEGI
                             actividadesEconomicas.[ae];         //Act.Econ
                             row.[valorAgregadoBase + ae];       //VA
                             row.[horasTrabajadasBase + ae];     //HT
