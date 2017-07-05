@@ -40,7 +40,7 @@ let getData conn =
     let horasTrabajadasBase = 22
     let acervoActivosFijosBase = 3
     let dbData = 
-        new NpgsqlCommand("SELECT * FROM k_l_va ORDER BY gid;", conn)
+        new NpgsqlCommand("SELECT * FROM klva ORDER BY gid;", conn)
         |> commandToArray
     let municipio (row:string []) =
         row.[60].Substring 4
