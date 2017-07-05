@@ -15,3 +15,6 @@ netstat -nlp
 
 See running process
 ps aux | grep mono
+
+To compile:
+. build.sh
