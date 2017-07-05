@@ -9,3 +9,6 @@ LD_LIBRARY_PATH=/home/jesus/lib code . --user-data-dir=/home/jesus/.code
 
 to run service in the background:
 nohup mono path_to/Regression.exe db_ip port db_name db_username > output.txt &
+
+See running processes and their local adress:
+netstat -nlp
